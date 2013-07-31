@@ -1,8 +1,10 @@
 package Models;
 import java.util.*;
 
-public class Code extends Models
+public class Code
 {
+
+/****
 	String code;
 	boolean status=true;
 	
@@ -25,4 +27,6 @@ public class Code extends Models
 	{
 		// we need to agree as to when and what documents will need to be deleted
 	}
+
+****/
 }

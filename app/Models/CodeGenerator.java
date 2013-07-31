@@ -4,6 +4,7 @@ import java.math.*;
 
 public class CodeGenerator
 {
+/**
 	String code;
 	
 	public CodeGenerator (String code)
@@ -22,4 +23,6 @@ public class CodeGenerator
 			}
 			System.out.printf("ALL CODES ARE GENERATED AND SAVE SUCCESSFULLY");
 		}
+
+**/
 }

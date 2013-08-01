@@ -1,10 +1,13 @@
 package Models;
 
+import javax.persistence.Id;
+
 import play.db.ebean.Model;
 
 
 public class Team extends Model
 {
+	@Id
 	public Long id;
 	public String teamName;
 	public Double accBalance=150000.00D;
@@ -12,16 +15,11 @@ public class Team extends Model
 	public Team() {
 	}
 
-
 	@Override
 	public String toString() {
 		return "Team [id=" + id + ", teamName=" + teamName + ", accBalance="
 				+ accBalance + "]";
 	}
-
-
-
-
 
 	//initializing the constructor
  	public Team (String teamName, Double accBalance)
@@ -29,7 +27,6 @@ public class Team extends Model
  		this.teamName=teamName;
  		this.accBalance=accBalance;
  	}
- 	
  	
 	public static Model.Finder<Long, Team> find = new 
 			Model.Finder<Long,Team>(Long.class, Team.class);
@@ -46,12 +43,11 @@ public class Team extends Model
  			team.accBalance+=110.0;
  			team.save();
  			
- 			if (teamName.toUpperCase().equals("SIMBA")) {
+ 			if (teamName.toUpperCase().equals("SIMBA")) 
 				teamName="YANGA";
-			}
- 			if (teamName.toUpperCase().equals("YANGA")) {
-				teamName="SIMBA";
-			}
+ 			else
+ 				teamName="SIMBA";
+		
  			Team opponnent=find.where()
  					.eq("teamName", teamName)
  					.findUnique();
